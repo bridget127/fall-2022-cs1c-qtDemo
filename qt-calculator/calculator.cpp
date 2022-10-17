@@ -106,20 +106,20 @@ void calculator::math_button_pressed()
         case '-':                                       // If the button value is "-"
             mathOperator = '-';                         // Set the math operator to "-"
             break;
-        case '^':
-            mathOperator = '^';
+        case '^':                                       // If the button value is "^"
+            mathOperator = '^';                         // Set the math operator to "^"
             break;
-        case 'v':
-            mathOperator = 'v';
+        case 'v':                                       // If the button value is "v"
+            mathOperator = 'v';                         // Set the math operator to "v"
             break;
-        case 's':
-            mathOperator = 's';
+        case 's':                                       // If the button value is "s"
+            mathOperator = 's';                         // Set the math operator to "s"
             break;
-        case 'c':
-            mathOperator = 'c';
+        case 'c':                                       // If the button value is "c"
+            mathOperator = 'c';                         // Set the math operator to "c"
             break;
-        case 't':
-            mathOperator = 't';
+        case 't':                                       // If the button value is "t"
+            mathOperator = 't';                         // Set the math operator to "t"
             break;
     }
 
@@ -154,20 +154,20 @@ void calculator::equal_button_pressed()
         case '-':                                       // If the math operator is "-"
             solution = calcValue - dbDisplayVal;        // Subtract the display value from the calc value
             break;
-        case '^':
-            solution = qPow(calcValue,dbDisplayVal);
+        case '^':                                       // If the math operator is "^"
+            solution = qPow(calcValue,dbDisplayVal);    // Raise the calc value to the power of the display value
             break;
-        case 'v':
-            solution= qSqrt(calcValue);
+        case 'v':                                       // If the math operator is "v"
+            solution = qSqrt(calcValue);                // Take the square root of the calc value
             break;
-        case 's':
-            solution = qSin(calcValue);
+        case 's':                                       // If the math operator is "s"
+            solution = qSin(calcValue);                 // Take the sine of the calc value
             break;
-        case 'c':
-            solution = qCos(calcValue);
+        case 'c':                                       // If the math operator is "c"
+            solution = qCos(calcValue);                 // Take the cosine of the calc value
             break;
-        case 't':
-            solution=qTan(calcValue);
+        case 't':                                       // If the math operator is "t"
+            solution = qTan(calcValue);                 // Take the tangent of the calc value
             break;
     }
 
