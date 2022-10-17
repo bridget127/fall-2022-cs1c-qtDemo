@@ -1,5 +1,6 @@
 #include "calculator.h"
 #include "./ui_calculator.h"
+#include <QtMath>
 
 
 // ==== Overloaded constructor ==========================================
@@ -34,6 +35,11 @@ calculator::calculator(QWidget *parent) : QMainWindow(parent), ui(new Ui::calcul
     connect(ui->buttonSub, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonMul, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonDiv, SIGNAL(released()), this, SLOT(math_button_pressed()));
+    connect(ui->buttonPow, SIGNAL(released()), this, SLOT(math_button_pressed()));
+    connect(ui->buttonSqrt, SIGNAL(released()), this, SLOT(math_button_pressed()));
+    connect(ui->buttonSin, SIGNAL(released()), this, SLOT(math_button_pressed()));
+    connect(ui->buttonCos, SIGNAL(released()), this, SLOT(math_button_pressed()));
+    connect(ui->buttonTan, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonEqual, SIGNAL(released()), this, SLOT(equal_button_pressed()));
 }
 
@@ -100,6 +106,21 @@ void calculator::math_button_pressed()
         case '-':                                       // If the button value is "-"
             mathOperator = '-';                         // Set the math operator to "-"
             break;
+        case '^':
+            mathOperator = '^';
+            break;
+        case 'v':
+            mathOperator = 'v';
+            break;
+        case 's':
+            mathOperator = 's';
+            break;
+        case 'c':
+            mathOperator = 'c';
+            break;
+        case 't':
+            mathOperator = 't';
+            break;
     }
 
     ui->Display->setText("");                           // Clear the display
@@ -132,6 +153,21 @@ void calculator::equal_button_pressed()
             break;
         case '-':                                       // If the math operator is "-"
             solution = calcValue - dbDisplayVal;        // Subtract the display value from the calc value
+            break;
+        case '^':
+            solution = qPow(calcValue,dbDisplayVal);
+            break;
+        case 'v':
+            solution= qSqrt(calcValue);
+            break;
+        case 's':
+            solution = qSin(calcValue);
+            break;
+        case 'c':
+            solution = qCos(calcValue);
+            break;
+        case 't':
+            solution=qTan(calcValue);
             break;
     }
 
