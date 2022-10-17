@@ -1,6 +1,5 @@
 #include "calculator.h"
 #include "./ui_calculator.h"
-#include <QtMath>
 
 
 // ==== Overloaded constructor ==========================================
@@ -35,11 +34,6 @@ calculator::calculator(QWidget *parent) : QMainWindow(parent), ui(new Ui::calcul
     connect(ui->buttonSub, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonMul, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonDiv, SIGNAL(released()), this, SLOT(math_button_pressed()));
-    connect(ui->buttonPow, SIGNAL(released()), this, SLOT(math_button_pressed()));
-    connect(ui->buttonSqrt, SIGNAL(released()), this, SLOT(math_button_pressed()));
-    connect(ui->buttonSin, SIGNAL(released()), this, SLOT(math_button_pressed()));
-    connect(ui->buttonCos, SIGNAL(released()), this, SLOT(math_button_pressed()));
-    connect(ui->buttonTan, SIGNAL(released()), this, SLOT(math_button_pressed()));
     connect(ui->buttonEqual, SIGNAL(released()), this, SLOT(equal_button_pressed()));
 }
 
@@ -106,21 +100,6 @@ void calculator::math_button_pressed()
         case '-':                                       // If the button value is "-"
             mathOperator = '-';                         // Set the math operator to "-"
             break;
-        case '^':                                       // If the button value is "^"
-            mathOperator = '^';                         // Set the math operator to "^"
-            break;
-        case 'v':                                       // If the button value is "v"
-            mathOperator = 'v';                         // Set the math operator to "v"
-            break;
-        case 's':                                       // If the button value is "s"
-            mathOperator = 's';                         // Set the math operator to "s"
-            break;
-        case 'c':                                       // If the button value is "c"
-            mathOperator = 'c';                         // Set the math operator to "c"
-            break;
-        case 't':                                       // If the button value is "t"
-            mathOperator = 't';                         // Set the math operator to "t"
-            break;
     }
 
     ui->Display->setText("");                           // Clear the display
@@ -153,21 +132,6 @@ void calculator::equal_button_pressed()
             break;
         case '-':                                       // If the math operator is "-"
             solution = calcValue - dbDisplayVal;        // Subtract the display value from the calc value
-            break;
-        case '^':                                       // If the math operator is "^"
-            solution = qPow(calcValue,dbDisplayVal);    // Raise the calc value to the power of the display value
-            break;
-        case 'v':                                       // If the math operator is "v"
-            solution = qSqrt(calcValue);                // Take the square root of the calc value
-            break;
-        case 's':                                       // If the math operator is "s"
-            solution = qSin(calcValue);                 // Take the sine of the calc value
-            break;
-        case 'c':                                       // If the math operator is "c"
-            solution = qCos(calcValue);                 // Take the cosine of the calc value
-            break;
-        case 't':                                       // If the math operator is "t"
-            solution = qTan(calcValue);                 // Take the tangent of the calc value
             break;
     }
 

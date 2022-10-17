@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
+<<<<<<< HEAD
 <TS version="2.1" language="en_US">
 <context>
     <name>calculator</name>
@@ -95,3 +96,6 @@
     </message>
 </context>
 </TS>
+=======
+<TS version="2.1" language="en_US"></TS>
+>>>>>>> parent of f76dacd (Add additional operators (#1))
