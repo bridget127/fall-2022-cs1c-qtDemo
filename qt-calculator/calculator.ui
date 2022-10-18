@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
-    <height>417</height>
+    <width>559</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,6 +53,7 @@ QPushButton:pressed{
        <font>
         <family>Arial Black</family>
         <pointsize>36</pointsize>
+        <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
         <kerning>true</kerning>
@@ -2381,6 +2382,13 @@ QPushButton:pressed{
       </item>
      </layout>
     </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>OFF</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -2388,13 +2396,30 @@ QPushButton:pressed{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>545</width>
-     <height>22</height>
+     <width>559</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>calculator</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>359</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
